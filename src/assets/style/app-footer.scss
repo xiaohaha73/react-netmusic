@@ -1,0 +1,152 @@
+$font-color: #999;
+$fontcolor2: #666;
+
+
+#app-footer {
+  border-top: 1px solid #e1e1e1;
+  width: 100%;
+  .footer-content{
+    width: 982px;
+    margin: 0 auto;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    .notesLink{
+      flex: 1;
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .notesTop {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        >ul {
+          display: flex;
+          flex-direction: row;
+          li {
+            margin-right: 21px;
+            a {
+              position: relative;
+              color: $font-color;
+              &::after {
+                position: absolute;
+                content: '';
+                height: 12px;
+                width: 1px;
+                top: 0;
+                right: -11px;
+                background: $font-color;
+              }
+            }
+
+          }
+        }
+      }
+
+      .notesBottom {
+        .Line {
+          margin-bottom: 10px;
+          span{
+            &:nth-child(2) {
+              margin-left: 10px;
+            }
+          }
+
+          .lastText {
+            margin-left: 30px;
+            position: relative;
+            &::before {
+              content: '';
+              position: absolute;
+              height: 20px;
+              width: 20px;
+              left: -23px;
+              top: -4px;
+              background: url("../img/police.png") no-repeat center;
+            }
+          }
+        }
+      }
+    }
+
+    .iconsLink{
+      flex: 1;
+      margin-top: 34px;
+      > ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        li {
+          a {
+            position: relative;
+            display: block;
+            height: 50px;
+            width: 50px;
+            margin-left: 45px;
+            background: url("../img/sprite_footer_02.png") no-repeat;
+            background-size: 105px 448px;
+            small{
+              bottom: -11px;
+              width: 100px;
+              text-align: center;
+              left: 50%;
+              transform: translateX(-50%);
+              position: absolute;
+              color: $font-color;
+            }
+          }
+
+          &:nth-child(1) a {
+            background-position: -61px 0px;
+          }
+          &:nth-child(2) a {
+            background-position: -61px -101px;
+          }
+          &:nth-child(3) a {
+            background-position: 0 0;
+          }
+          &:nth-child(4) a {
+            background-position: -61px -50px;
+          }
+          &:nth-child(5) a {
+            background-position: 0px -101px;
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+/*底部播放栏弹出动画*/
+.play-box-enter,.play-box-appear {
+  transform: translateY(-42px);
+}
+
+.play-box-enter-active,.play-box-appear-active {
+  transform: translateY(0px);
+  transition: all 800ms ease;
+}
+
+.play-box-enter-done {
+  transform: translateY(0px);
+}
+
+.play-box-exit {
+  transform: translateY(0px);
+}
+.play-box-exit-active {
+  transform: translateY(-42px);
+  transition: all 800ms ease;
+}
+
+.play-box-exit-done {
+  transform: translateY(-42px);
+}
+
+/*锁定播放栏的样式*/
+.play-locked {
+  bottom: 0 !important;
+}
